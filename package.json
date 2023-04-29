@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@parcel/transformer-pug": "2.8.3",
+    "@parcel/transformer-sass": "2.8.3",
+    "@prettier/plugin-pug": "^2.4.2",
+    "prettier": "^2.8.8"
+  },
+  "name": "resume",
+  "version": "0.0.1",
+  "description": "Resume - Toon Baeyens",
+  "author": "Toon Baeyens",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "serve": "parcel index.pug",
+    "build": "parcel build index.pug"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5",
+    "parcel": "^2.8.3"
+  }
+}

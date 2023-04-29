@@ -1,0 +1,69 @@
+$bootstrap-icons-font-dir: "./node_modules/bootstrap-icons/font/fonts";
+
+$blue: #46668c;
+$blue-light: #9db1cc;
+$blue-dark: #111c20;
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import "./node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+$date-width: 2.9rem;
+$date-gutter: 0.5rem;
+$date-border: 1px;
+
+h1,
+h2,
+h3 {
+  color: $blue-dark;
+}
+
+ul.date-list {
+  padding: 0;
+
+  & > li {
+    min-height: 4rem;
+    display: block;
+    margin: 0 0 1rem 0;
+    padding: 0 0 0 $date-gutter;
+    border-left: solid $date-width $blue-light;
+    border-top: solid $date-border $blue;
+
+    .title {
+      display: block;
+      font-weight: bold;
+      font-size: 110%;
+      color: $blue-dark;
+    }
+
+    .date {
+      display: block;
+      font-size: 90%;
+      float: left;
+      margin: 0.3em 0 -0.1rem calc(-1 * ($date-gutter + $date-width));
+      width: $date-width;
+      color: $blue-dark;
+      font-weight: bold;
+      text-align: center;
+
+      .dash {
+        display: block;
+        margin: -0.4rem 0 -0.4rem 0;
+      }
+    }
+
+    .location {
+      display: block;
+      display: block;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.description {
+      margin: 0;
+      font-size: 90%;
+      & > li {
+        list-style-type: disc;
+      }
+    }
+  }
+}
