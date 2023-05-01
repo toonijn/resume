@@ -1,0 +1,18 @@
+name: Build resume
+on: [push]
+jobs:
+  build-thesis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+      - run: yarn install
+      - run: yarn build
+      - run: zip -FSr ../resume.zip *
+        working-directory: dist
+      - name: Upload
+        run: |
+          curl -F data=@resume.zip -F token=${{ secrets.UPLOAD_TOKEN }} -F path=resume ${{ secrets.UPLOAD_URL }}
