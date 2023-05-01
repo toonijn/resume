@@ -2,36 +2,121 @@ $bootstrap-icons-font-dir: "./node_modules/bootstrap-icons/font/fonts";
 
 $blue: #46668c;
 $blue-light: #9db1cc;
-$blue-dark: #111c20;
+$blue-dark: #26404a;
+
+$font-family-title: "Courier New", Courier, monospace;
+$font-family-base: "Arial", sans-serif;
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
 @import "./node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
 $date-width: 2.9rem;
 $date-gutter: 0.5rem;
-$date-border: 1px;
 
 h1,
 h2,
 h3 {
   color: $blue-dark;
+  font-family: $font-family-title;
+}
+
+h1 {
+  font-size: calc(1.5rem + 2vw);
 }
 
 .sidebar {
   .profile-picture {
-    padding: 0.5rem;
+    padding: 0;
+
+    & > div {
+      padding: calc(0.5 * $grid-gutter-width);
+      background-color: $blue-light;
+      color: white;
+
+      ul.birthday {
+        font-size: 90%;
+        font-style: italic;
+        padding: 0;
+        margin: 0.5rem 0 0 0;
+
+        li {
+          display: block;
+        }
+      }
+    }
+  }
+
+  h1.wide-name {
+    color: white;
     background: $blue-light;
+    margin: 0 calc(-0.5 * $grid-gutter-width);
+    padding: 0.5rem calc(0.5 * $grid-gutter-width);
   }
 
   @include media-breakpoint-up(md) {
-    border-right: solid $date-border $blue;
+    border-right: solid $border-width $blue;
+  }
 
-    h1 {
-      color: white;
-      background: $blue-light;
-      margin: 0 calc(-0.5 * $grid-gutter-width);
-      padding: 0.5rem calc(0.5 * $grid-gutter-width);
+  .bio,
+  .socials {
+    @include media-breakpoint-up(md) {
+      border-bottom: $border-width solid $blue;
+      padding: calc(0.5 * $grid-gutter-width);
     }
+  }
+
+  .bio {
+    @include media-breakpoint-down(md) {
+      border-right: $border-width solid $blue;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: block;
+        line-height: 1rem;
+        margin: 0 0 0.6rem 0;
+
+        &:nth-child(even) {
+          float: right;
+        }
+
+        &:nth-child(odd) {
+          padding-right: 1rem;
+          float: left;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .socials {
+    ul {
+      margin: 0;
+      padding: 0 0 0 1.5rem;
+
+      li {
+        display: block;
+        position: relative;
+
+        i.bi {
+          position: absolute;
+          left: -1.5rem;
+          color: $blue-dark;
+        }
+      }
+    }
+  }
+}
+
+.experiences {
+  section {
+    padding-top: 1rem;
   }
 }
 
@@ -39,17 +124,23 @@ ul.date-list {
   padding: 0;
 
   & > li {
-    min-height: 4rem;
     display: block;
     margin: 0 0 1rem 0;
     padding: 0 0 0 $date-gutter;
     border-left: solid $date-width $blue-light;
-    border-top: solid $date-border $blue;
+    border-top: $border-width solid $blue;
+
+    &:after {
+      display: block;
+      content: " ";
+      height: 0;
+      clear: both;
+    }
 
     .title {
       display: block;
       font-weight: bold;
-      font-size: 110%;
+      font-size: 105%;
       color: $blue-dark;
     }
 
@@ -60,8 +151,8 @@ ul.date-list {
       margin: 0.3em 0 -0.1rem calc(-1 * ($date-gutter + $date-width));
       width: $date-width;
       color: white; //$blue-dark;
-      font-weight: bold;
       text-align: center;
+      font-family: $font-family-title;
 
       .dash {
         display: block;
@@ -84,4 +175,8 @@ ul.date-list {
       }
     }
   }
+}
+
+@page {
+  margin: 1.5cm;
 }

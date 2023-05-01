@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
 
 include private.pug
-- var dash = '<span class="dash">&ndash;</span>'
+- var dash = '<span class="dash">&ndash;</span>';
 
 head
   meta(charset="UTF-8")
@@ -17,40 +17,54 @@ body
         header
           .row
             .col-3.col-md-12.profile-picture
-              img.img-fluid(src="profile.jpg")
+              div
+                h1.wide-name.d-none.d-md-block Toon Baeyens
+                img.img-fluid(src="profile.jpg")
+                ul.birthday
+                  li Sint-Niklaas - Belgium
+                  li 1995 / 11 / 17
             .col
-              h1 Toon Baeyens
+              h1.small-name.d-md-none Toon Baeyens
 
-              ul
-                if phone != ""
-                  li
-                    i.bi.bi-telephone-fill
-                    a.no-web(href="tel:#{phone.replace(' ','')}") #{ phone }
-                li
-                  i.bi.bi-envelope-fill
-                  a(href="mailto:#{email}") #{ email }
-                li
-                  i.bi.bi-house-fill
-                  a(href="https://toonijn.be/") toonijn.be
-                li
-                  i.bi.bi-github
-                  a(href="https://github.com/toonijn") github.com/toonijn
-                li.d-print-none
-                  i.bi.bi-linkedin
-                  a.no-print(href="https://www.linkedin.com/in/toon-baeyens/") LinkedIn
-                li
-                  a.no-print(href="https://orcid.org/0000-0002-2069-7824") ORCID
-                li
-                  a.no-print(
-                    href="https://scholar.google.com/citations?user=7UMAtFoAAAAJ"
-                  ) Google Scholar
+              .row
+                .col.bio
+                  ul
+                    li.bio1 mathematician
+                    li.bio2 collaborative problem solver
+                    li.bio3 PhD researcher
+                    li.bio4 creative mind
+                    li.bio5 computational thinker
+                    li.bio6 husband and father
+                .col.socials
+                  ul
+                    if phone != ""
+                      li
+                        i.bi.bi-telephone-fill
+                        a.no-web(href="tel:#{phone.replace(' ','')}") #{ phone }
+                    li
+                      i.bi.bi-envelope-fill
+                      a(href="mailto:#{email}") #{ email }
+                    li
+                      i.bi.bi-globe2
+                      a(href="https://toonijn.be/") toonijn.be
+                    li
+                      i.bi.bi-github
+                      a(href="https://github.com/toonijn") github.com/toonijn
+                    li
+                      i.bi.bi-linkedin
+                      a(href="https://www.linkedin.com/in/toon-baeyens/") /in/toon-baeyens
+                    li.d-print-none
+                      i.bi.bi-google
+                      a.no-print(
+                        href="https://scholar.google.com/citations?user=7UMAtFoAAAAJ"
+                      ) Google Scholar
 
-      .col
+      .col.experiences
         section
-          h2 Work Experience
+          h2 Work experience
           ul.date-list
             li.experience
-              span.date 2018!{dash}2023
+              span.date 2018!{ dash }now
               span.title Teaching Assistant
               span.location #[a(href="https://www.ugent.be/we/twist/en") Department of Applied mathematics, Computer science and Statistics] - Ghent University
               ul.description
@@ -72,40 +86,40 @@ body
               span.location #[a(href="https://www.yazzoom.com/") Yazzoom] - Ghent
               ul.description
                 li Automatic pattern recognition in logging data.
-                li Setting up a windows continuous integration server.
 
             li.experience
-              span.date 2015!{dash}2017
+              span.date 2015!{ dash }2017
               span.title Assisting during summer course - Student job
               span.location Ghent University
               ul.description
                 li Assisting during the summer course mathematics for first year students.
 
             li.experience
-              span.date 2012!{dash}2014
+              span.date 2012!{ dash }2014
               span.title Frontend developer - Student job
               span.location Blue Cherry - Antwerp
               ul.description
-                li Implementing web-site designs into HTML and CSS.
+                li Implementing website designs into HTML and CSS.
 
         section
           h2 Education
           ul.date-list
             li.experience
-              span.date 2018!{dash}2023
+              span.date 2018!{ dash }2023
               span.title Doctor of Science: Mathematics - #[a(href="https://toonijn.be/thesis/") Algorithms for time-independent Schrödinger equations]
               span.location Department of Applied mathematics, Computer science and Statistics - Ghent University
               ul.description
-                li To-do: C++, Python short summary
+                li Developing accurate algorithms and efficient C++ programs for Schrödinger equations
+                li Building a user-friendly Python-interface.
 
             li.experience
-              span.date 2016!{dash}2018
+              span.date 2016!{ dash }2018
               span.title Master of Science: Mathematics - major Applied Mathematics and Computer Science
                 Science
               span.location Ghent University
 
             li.experience
-              span.date 2013!{dash}2016
+              span.date 2013!{ dash }2016
               span.title Bachelor of Science: Mathematics
               span.location Ghent University
 
@@ -113,7 +127,7 @@ body
           h2 Extra-curriculars
           ul.date-list
             li.experience
-              span.date 2018!{dash}2023
+              span.date 2018!{ dash }now
               span.title Outreach and popularizing mathematics
               ul.description
                 li 2022-2023: Five posters and interactive visualizations of fractals for #[a(href="https://www.imaginarymaths.be/") Imaginary].
@@ -125,17 +139,17 @@ body
                 li 2019: Pint of science: Art in mathematics - Unexpected beauty in root finding algorithms.
 
             li.experience
-              span.date 2020!{dash}2023
+              span.date 2020!{ dash }now
               span.title Faculty board member
               span.location Faculty of Sciences - Ghent University
 
             li.experience
-              span.date 2014!{dash}2018
+              span.date 2014!{ dash }2018
               span.title Student representative
               span.location Ghent University
 
             li.experience
-              span.date 2009!{dash}2023
+              span.date 2009!{ dash }now
               span.title Participating in math and programming competitions
               ul.description
                 li Three times second place in the #[a(href="https://www.vlaamseprogrammeerwedstrijd.be/") Flemish Programming Competition (VPW)]
@@ -148,7 +162,7 @@ body
 
             li.experience
               span.title More than 350 problems solved on Project Euler
-              span.location #[a(href="https://projecteuler.net/")] ProjectEuler.net
+              span.location #[a(href="https://projecteuler.net/") ProjectEuler.net]
 
             li.experience
               span.title Open-source contributions
@@ -165,39 +179,39 @@ body
           ul.date-list
             li.publication
               span.date 2021
-              span.authors Baeyens, T., & Van Daele, M.
               span.title
                 a(href="https://doi.org/10.1016/j.cpc.2020.107568") The fast and accurate computation of eigenvalues and eigenfunctions of time-independent one-dimensional Schrödinger equations.
+              span.authors Baeyens, T., & Van Daele, M.
               span.journalComputer Physics Communications, 258, 107568.
 
             li.publication
               span.date 2022
-              span.authors Baeyens, T., & Van Daele, M.
               span.title
                 a(href="https://doi.org/10.1016/j.cam.2022.114292") Improvements to the computation of eigenvalues and eigenfunctions of two-dimensional Schrödinger equations by constant perturbation based algorithms.
+              span.authors Baeyens, T., & Van Daele, M.
               span.journal Journal of Computational and Applied Mathematics, 412, 114292.
 
             li.publication
               span.date 2022
-              span.authors Maertens, R., Van Petegem, C., Strijbol, N., Baeyens, T., Jacobs, A. C., Dawyndt, P., & Mesuere, B.
               span.title
                 a(href="https://doi.org/10.1111/jcal.12662") Dolos: Language-agnostic plagiarism detection in source code.
+              span.authors Maertens, R., Van Petegem, C., Strijbol, N., Baeyens, T., Jacobs, A. C., Dawyndt, P., & Mesuere, B.
               span.journal Journal of Computer Assisted Learning, 38(4), 1046-1061.
 
           h3 Active research projects
           ul.date-list
             li.publication
-              span.authors Baeyens, T., & Van Daele, M.
               span.title Strands: new efficient technique for solving time-independent two-dimensional Schrödinger equations accurately.
+              span.authors Baeyens, T., & Van Daele, M.
 
             li.publication
-              span.authors Baeyens, T., Van Daele, M., & Vernaeve, H.
               span.title Determining indices of eigenvalues of linear self-adjoint elliptic operators on bounded Lipschitz domains.
+              span.authors Baeyens, T., Van Daele, M., & Vernaeve, H.
 
             li.publication
-              span.authors Baeyens, T., Govaerts, W., Van Daele, M., & Vanden Bussche, C.
               span.title Local Lyapunov exponents, spiking and bistability in SEIR and SEIRS models for COVID-19
+              span.authors Baeyens, T., Govaerts, W., Van Daele, M., & Vanden Bussche, C.
 
             li.publication
-              span.authors Coudron, W., Baeyens, T., Lootens, P., Pardon, P., Reubens, B., Van Den Berge, S., De Frenne, P., Verheyen, K., & De Swaef, T.
               span.title Quantifying temporal and spatial variability in light availability in agroforestry systems
+              span.authors Coudron, W., Baeyens, T., Lootens, P., Pardon, P., Reubens, B., Van Den Berge, S., De Frenne, P., Verheyen, K., & De Swaef, T.
