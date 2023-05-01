@@ -40,10 +40,10 @@ body
                     if phone != ""
                       li
                         i.bi.bi-telephone-fill
-                        a.no-web(href="tel:#{phone.replace(' ','')}") #{ phone }
+                        a.no-web(href="tel:" + phone.replace(/ /g, "")) #{ phone }
                     li
                       i.bi.bi-envelope-fill
-                      a(href="mailto:#{email}") #{ email }
+                      a(href="mailto:" + email) #{ email }
                     li
                       i.bi.bi-globe2
                       a(href="https://toonijn.be/") toonijn.be
@@ -106,7 +106,7 @@ body
           ul.date-list
             li.experience
               span.date 2018!{ dash }2023
-              span.title Doctor of Science: Mathematics - #[a(href="https://toonijn.be/thesis/") Algorithms for time-independent Schrödinger equations]
+              span.title Doctor of Science: Mathematics - #[a(href="https://toonijn.be/thesis/") Algorithms for time-independent Schrödinger equations] (Defending at the end of June)
               span.location Department of Applied mathematics, Computer science and Statistics - Ghent University
               ul.description
                 li Developing accurate algorithms and efficient C++ programs for Schrödinger equations
