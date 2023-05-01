@@ -21,7 +21,7 @@ h3 {
 }
 
 h1 {
-  font-size: calc(1.5rem + 2vw);
+  font-size: calc(1.5rem + min(1.5rem, 2vw));
 }
 
 .sidebar {
