@@ -13,7 +13,7 @@
   "private": true,
   "scripts": {
     "serve": "parcel index.pug",
-    "build": "parcel build index.pug --no-source-maps"
+    "build": "parcel build index.pug --no-source-maps --public-url ."
   },
   "dependencies": {
     "bootstrap": "^5.2.3",

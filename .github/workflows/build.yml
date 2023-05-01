@@ -1,7 +1,7 @@
 name: Build resume
 on: [push]
 jobs:
-  build-thesis:
+  build-resume:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
